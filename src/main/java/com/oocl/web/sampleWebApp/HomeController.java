@@ -3,6 +3,7 @@ package com.oocl.web.sampleWebApp;
 import java.util.HashMap;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -24,6 +25,11 @@ public class HomeController {
     	HashMap<String,String> map = new HashMap<String,String>();
     	map.put("user", "¿Ó“ª“ª");
     	return map;
-    	
+    }
+    @PostMapping("/users")
+    public @ResponseBody HashMap<String,String> userPostController(){
+    	HashMap<String,String> map = new HashMap<String,String>();
+    	map.put("id", "001");
+    	return map;
     }
 }
