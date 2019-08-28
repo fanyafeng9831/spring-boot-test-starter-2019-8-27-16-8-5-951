@@ -13,10 +13,12 @@ public class HomeController {
     public @ResponseBody String greeting() {
         return "Hello World";
     }
+    
     @RequestMapping("/hello")
     public @ResponseBody String getHello() {
         return "Hello World";
     }
+    
     @RequestMapping("/user")
     public @ResponseBody HashMap<String,String> userController(){
     	HashMap<String,String> map = new HashMap<String,String>();

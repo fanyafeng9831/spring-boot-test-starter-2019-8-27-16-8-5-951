@@ -5,7 +5,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,6 +18,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
+
 public class SampleWebAppApplicationTests {
 
     @Autowired
@@ -40,7 +40,9 @@ public class SampleWebAppApplicationTests {
         .andDo(print())
         .andExpect
         (status().isOk())
-                .andExpect(content().string(containsString("Hello World")));
+                .andExpect(
+                		content().string(containsString("Hello World"))
+                		);
     }
     @Test
     public void shouldReturnUserMessage() throws Exception {
